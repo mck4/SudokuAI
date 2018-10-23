@@ -16,27 +16,11 @@ public class Board {
 		
 	}
 	
-	public static void loadBoard(String file) {
+	public static void loadBoard(String file, String gridName) {
 		
 		String [] nums; // String array for tokens
 		
-		// Read in the file
-		try {
-			Scanner infile = new Scanner(new FileReader(file));
-			
-			String gridName = infile.nextLine();
-			
-			while(infile.hasNext()) {
-				// GET nums here
-			}
-			
-			// Debug
-			System.out.println("Grid name " + gridName);
-		}
-		catch ( FileNotFoundException e ) {
-			System.out.println("File not found");
-			System.exit( 0 );
-		}
+		/* stuff will go here */
 		
 	
 	}
