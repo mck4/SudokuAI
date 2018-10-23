@@ -1,7 +1,6 @@
 package application.model;
 
-public class Cell {
-	
+public class Cell {	
 	
 	int value;
 	boolean isEmpty;
