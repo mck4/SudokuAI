@@ -21,10 +21,10 @@ public class MainController implements EventHandler<ActionEvent> {
 		
 		System.out.println("\nThis method loads automatically when program is run\n");
 		
-		String file = "puzzles.txt";
-		String gridName = "Grid 05";
+		String file = "puzzles.txt"; // Name of the file
+		String gridName = "Grid 05"; // Should take any Grid that exists; also there's still 10 in the puzzles.txt which eh we don't need to change?
 		
-		Board board = Board.loadBoard(file, gridName);
+		Board board = Board.loadBoard(file, gridName); // Get that board!
 		
 		// Print the board!
 		if(board != null)

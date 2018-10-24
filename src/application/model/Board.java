@@ -86,7 +86,7 @@ public class Board {
 
 			}
 			else {
-				// The grid was not found, so the the boardArr was not filled
+				// The grid was not found, so exit
 				System.out.println( gridName + " not found." );
 				System.exit( 0 );
 			}
@@ -97,6 +97,8 @@ public class Board {
 			System.out.println( "File not found" );
 			System.exit( 0 );
 		}
+		
+		// Return the new board
 		return newBoard;
 	}
 
