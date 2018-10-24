@@ -12,9 +12,19 @@ public class Cell {
 		this.isEmpty = isEmpty;
 	}
 
+	// toString 
+	public String toString() {
+		return String.valueOf(this.value);
+	}
+	
+	// Checks if the cell is empty
+	public boolean isEmpty() {
+		return isEmpty;
+	}
+	
 	// Gets the value of the cell
 	public int getValue() {
-		return value;
+		return this.value;
 	}
 
 	// Sets the value of the cell
@@ -22,11 +32,6 @@ public class Cell {
 		this.value = value;
 	}
 
-	// Checks if the cell is empty
-	public boolean isEmpty() {
-		return isEmpty;
-	}
-	
 	// Set the value of isEmpty
 	public void setEmpty(boolean isEmpty) {
 		this.isEmpty = isEmpty;
