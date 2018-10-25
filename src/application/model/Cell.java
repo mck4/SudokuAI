@@ -14,7 +14,10 @@ public class Cell {
 
 	// toString 
 	public String toString() {
-		return String.valueOf(this.value);
+		if(this.value != 0)
+			return String.valueOf(this.value);
+		else
+			return " ";
 	}
 	
 	// Checks if the cell is empty
