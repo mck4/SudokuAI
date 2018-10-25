@@ -64,17 +64,20 @@ public class MainController implements EventHandler<ActionEvent> {
 			// END PRINT */
 	}
 	
+	/* Loads the puzzles in the file to fill the comboBox with values */
 	public void loadPuzzles() {
+		// Open puzzles.txt
 		try {
-			Scanner puzzlesFile = new Scanner(new FileReader("puzzles.txt"));
-			Pattern pattern = Pattern.compile("(Grid [0-9]+)$");
-			Matcher match;
+			Scanner puzzlesFile = new Scanner(new FileReader("puzzles.txt")); // Open
+			Pattern pattern = Pattern.compile("(Grid [0-9]+)$");			  // Pattern must match "Grid #"
+			Matcher match;													  // For found matches
+			// Look for matches
 			while(puzzlesFile.hasNext()) {
 				match = pattern.matcher(puzzlesFile.nextLine());
 				
-				if (match.find()) {
-					puzzleListAL.add(match.group(0));
-				}
+				if (match.find())
+					puzzleListAL.add(match.group(0));						 // I
+
 			}
 			
 			System.out.println(puzzleListAL);	
@@ -82,6 +85,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			choice.setItems(puzzleListOL);
 			puzzlesFile.close();
 		}
+		// Something went wrong
 		catch(Exception e) {
 			System.out.println("Could not find puzzles.txt.");
 			System.exit(1);
