@@ -27,7 +27,7 @@ public class Solver {
 		return iRowNr;
 	}
 	
-	public int checkColsforZeros()
+	//public int checkColsforZeros()
 	
 	
 

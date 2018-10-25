@@ -74,16 +74,14 @@ public class MainController implements EventHandler<ActionEvent> {
 			// Look for matches
 			while(puzzlesFile.hasNext()) {
 				match = pattern.matcher(puzzlesFile.nextLine());
-				
 				if (match.find())
-					puzzleListAL.add(match.group(0));						 // I
-
+					puzzleListAL.add(match.group(0));						 // If match found, add to AL of puzzles
 			}
 			
-			System.out.println(puzzleListAL);	
+			// Make an ObservableList of the AL of puzzles
 			puzzleListOL = FXCollections.observableArrayList(puzzleListAL);
-			choice.setItems(puzzleListOL);
-			puzzlesFile.close();
+			choice.setItems(puzzleListOL);									// Set on the GUI
+			puzzlesFile.close();											// Close file
 		}
 		// Something went wrong
 		catch(Exception e) {
