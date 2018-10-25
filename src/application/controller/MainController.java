@@ -1,10 +1,15 @@
 package application.controller;
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import application.Main;
 import application.model.Board;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,7 +18,10 @@ import javafx.scene.control.ComboBox;
 
 public class MainController implements EventHandler<ActionEvent> {
 	
-	ComboBox choice;
+	@FXML
+	ComboBox <String> choice;
+	ObservableList<String> puzzleListOL;
+	ArrayList<String> puzzleListAL = new ArrayList<String>();
 	
 	@Override
 	public void handle(ActionEvent event) {
@@ -59,8 +67,20 @@ public class MainController implements EventHandler<ActionEvent> {
 	public void loadPuzzles() {
 		try {
 			Scanner puzzlesFile = new Scanner(new FileReader("puzzles.txt"));
+			Pattern pattern = Pattern.compile("(Grid [0-9]+)$");
+			Matcher match;
+			while(puzzlesFile.hasNext()) {
+				match = pattern.matcher(puzzlesFile.nextLine());
+				
+				if (match.find()) {
+					puzzleListAL.add(match.group(0));
+				}
+			}
 			
-			//puzzlesFile.
+			System.out.println(puzzleListAL);	
+			puzzleListOL = FXCollections.observableArrayList(puzzleListAL);
+			choice.setItems(puzzleListOL);
+			puzzlesFile.close();
 		}
 		catch(Exception e) {
 			System.out.println("Could not find puzzles.txt.");
