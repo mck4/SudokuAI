@@ -205,7 +205,7 @@
             </GridPane>
          </children>
       </GridPane>
-      <ComboBox id="windows7Box" fx:id="choice" layoutX="197.0" layoutY="21.0" prefHeight="37.0" prefWidth="206.0" promptText="Select Puzzle..." style="-fx-accent: #00ced1; -fx-focus-color: #00ced1;" stylesheets="@../extra.css" />
+      <ComboBox id="windows7Box" fx:id="choice" layoutX="197.0" layoutY="21.0" onAction="#comboHandle" prefHeight="37.0" prefWidth="206.0" promptText="Select Puzzle..." style="-fx-accent: #00ced1; -fx-focus-color: #00ced1;" stylesheets="@../extra.css" />
       <Label layoutX="276.0" layoutY="587.0" style="-fx-background-color: #ffffff; -fx-border-color: #00ced1; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-insets: 1;" text="Label" textFill="#e81313" AnchorPane.bottomAnchor="79.0">
          <font>
             <Font size="14.0" />

@@ -20,7 +20,6 @@ public class MainController implements EventHandler<ActionEvent> {
 	
 	@FXML
 	ComboBox <String> choice;
-	ObservableList<String> puzzleListOL;
 	ArrayList<String> puzzleListAL = new ArrayList<String>();
 	
 	@Override
@@ -30,7 +29,14 @@ public class MainController implements EventHandler<ActionEvent> {
 
 	}
 	
-	// This method loads automatically when program is run
+	/** Whenever someone makes a choice on the combobox **/
+	public void comboHandle(ActionEvent event) {
+		System.out.println("hello");
+		//Board board = Board.loadBoard(file, gridName);
+		
+	}
+	
+	/**  This method loads automatically when program is run **/
 	public void initialize() {
 		
 		loadPuzzles();
@@ -64,24 +70,23 @@ public class MainController implements EventHandler<ActionEvent> {
 			// END PRINT */
 	}
 	
-	/* Loads the puzzles in the file to fill the comboBox with values */
+	/** Loads the puzzles in the file to fill the comboBox with values **/
 	public void loadPuzzles() {
 		// Open puzzles.txt
 		try {
-			Scanner puzzlesFile = new Scanner(new FileReader("puzzles.txt")); // Open
-			Pattern pattern = Pattern.compile("(Grid [0-9]+)$");			  // Pattern must match "Grid #"
-			Matcher match;													  // For found matches
+			Scanner puzzlesFile = new Scanner(new FileReader("puzzles.txt"));  // Open
+			Pattern pattern = Pattern.compile("(Grid [0-9]+)$");			   // Pattern must match "Grid #"
+			Matcher match;													   // For found matches
 			// Look for matches
 			while(puzzlesFile.hasNext()) {
 				match = pattern.matcher(puzzlesFile.nextLine());
 				if (match.find())
-					puzzleListAL.add(match.group(0));						 // If match found, add to AL of puzzles
+					puzzleListAL.add(match.group(0));						  // If match found, add to AL of puzzles
 			}
 			
 			// Make an ObservableList of the AL of puzzles
-			puzzleListOL = FXCollections.observableArrayList(puzzleListAL);
-			choice.setItems(puzzleListOL);									// Set on the GUI
-			puzzlesFile.close();											// Close file
+			choice.setItems(FXCollections.observableArrayList(puzzleListAL)); // Set on the GUI
+			puzzlesFile.close();											  // Close file
 		}
 		// Something went wrong
 		catch(Exception e) {
