@@ -63,41 +63,65 @@
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r0c2" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r1c0" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r1c1" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label fx:id="r1c2" alignment="CENTER" layoutX="65.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r1c2" alignment="CENTER" layoutX="65.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r2c0" alignment="CENTER" layoutX="121.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r2c1" alignment="CENTER" layoutX="10.0" layoutY="122.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r2c2" alignment="CENTER" layoutX="65.0" layoutY="122.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -129,31 +153,49 @@
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r0c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r0c5" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r1c3" alignment="CENTER" layoutX="121.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r1c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r1c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r2c3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
@@ -164,11 +206,17 @@
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r2c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -200,46 +248,73 @@
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r3c1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r3c2" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r4c0" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r4c1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r4c2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r5c0" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r5c1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r5c2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -255,50 +330,77 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
+                  <Label fx:id="r3c3" alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Label fx:id="r3c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
+                  <Label fx:id="r3c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r4c3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r4c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r4c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r5c3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r5c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r5c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -318,46 +420,73 @@
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r0c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                   <Label fx:id="r0c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label fx:id="r1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r1c6" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r1c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r1c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label fx:id="r2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r2c6" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r2c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r2c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -385,50 +514,77 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
+                  <Label fx:id="r3c6" alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Label fx:id="r3c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
+                  <Label fx:id="r3c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r4c6" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r4c7" alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="65.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r4c8" alignment="CENTER" layoutX="65.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="120.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r5c6" alignment="CENTER" layoutX="120.0" layoutY="66.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="122.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r5c7" alignment="CENTER" layoutX="10.0" layoutY="122.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r5c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -444,50 +600,77 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
+                  <Label fx:id="r6c0" alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Label fx:id="r6c1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
+                  <Label fx:id="r6c2" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r7c0" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r7c1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r7c2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r8c0" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r8c1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r8c2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -515,50 +698,77 @@
                         </LinearGradient>
                      </fill>
                   </Rectangle>
-                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
+                  <Label fx:id="r6c3" alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Label fx:id="r6c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
+                  <Label fx:id="r6c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r7c3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r7c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r7c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r8c3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r8c4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r8c5" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
@@ -574,50 +784,77 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
+                  <Label fx:id="r6c6" alignment="CENTER" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Label fx:id="r6c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
+                  <Label fx:id="r6c8" alignment="CENTER" layoutX="65.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="120.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
+                  <Label fx:id="r7c6" alignment="CENTER" layoutX="120.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="r7c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="r7c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
+                  <Label fx:id="r8c6" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="r8c7" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="r8c8" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="61.0" text=" " textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
