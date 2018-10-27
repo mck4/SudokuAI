@@ -1,3 +1,4 @@
+/** Solver.java **/
 package application.model;
 
 import java.util.ArrayList;
@@ -6,14 +7,21 @@ import java.util.List;
 
 public class Solver {
 	
-	public int checkRowsForZeros(Cell[][] boardArr){
+	// Constructor
+	public Solver() {
 		
-		int zCount = 0;
-		int minZero = 0;
+	}
+	
+	// Method to check rows for Zeros
+	// The row with the smallest # of zeros (at least 1) is returned
+	public int checkRowsForZeros(Cell[][] boardArr) {
+		
+		int zCount = 0;		// Zero count
+		int minZero = 0;	// Row with smallest # of zeros
 		int iRowNr = 0;
 		
-		for(int i = 0; i < 9; i++){
-			for ( int j = 0 ; j < 9; j ++){
+		for(int i = 0; i < 9; i++) {
+			for ( int j = 0 ; j < 9; j ++) {
 				if (boardArr[i][j].getValue() == 0)
 					zCount++;
 			}

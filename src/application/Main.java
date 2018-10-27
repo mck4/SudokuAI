@@ -1,3 +1,4 @@
+/** Main.java **/
 package application;
 	
 import javafx.application.Application;
@@ -12,9 +13,7 @@ public class Main extends Application {
 	
 	public static Stage stage;
 	
-	/** 
-	 * Loads the FXML file, sets the scene onto stage
-	*/
+	/**  Loads the FXML file, sets the scene onto stage **/
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -45,6 +44,7 @@ public class Main extends Application {
 		}
 	}
 	
+	/** Everything starts here **/
 	public static void main(String[] args) {
 		launch(args);
 	}
