@@ -74,7 +74,7 @@ public class MainController implements EventHandler<ActionEvent> {
 		// Get those numbers onto the board
 		for(int row=0; row<9; row++) {
 			for(int col=0; col<9; col++) {
-				labels[row][col].setText(String.valueOf(board.getArr()[row][col]));
+				labels[row][col].setText(String.valueOf(board.getBoardArr()[row][col]));
 			}
 		}
 	
