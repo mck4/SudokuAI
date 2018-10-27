@@ -12,23 +12,23 @@ public class Solver {
 		
 	}
 	
-	// Method to check rows for Zeros
 	// The row with the smallest # of zeros (at least 1) is returned
 	public int checkRowsForZeros(Cell[][] boardArr) {
 		
-		int zCount = 0;		// Zero count
-		int minZero = 0;	// Row with smallest # of zeros
+		int zCount = 0;		// Zero count for each row
+		int minZero = 0;	// Smallest zero count found
 		int iRowNr = 0;
 		
-		for(int i = 0; i < 9; i++) {
-			for ( int j = 0 ; j < 9; j ++) {
+		for(int i = 0; i < 9; i++){
+			zCount = 0; // Reset for each row
+			for ( int j = 0 ; j < 9; j ++){
+				// Count # of zeros
 				if (boardArr[i][j].getValue() == 0)
 					zCount++;
 			}
 			
 			if (minZero == 0) 
 				minZero = zCount;
-				
 			
 			else if (zCount < minZero && zCount != 0){
 				minZero = zCount;
