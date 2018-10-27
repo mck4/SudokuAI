@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Board {
 
 	// Variables
-	int answerArr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	Cell[][] boardArr = new Cell[9][9]; // 2d board arr
+	//int [] answerArr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+	Cell [][] boardArr = new Cell[9][9]; // 2d board arr
 	String name; // Name of board ie "Grid #"
 
 	// Constructor
@@ -90,4 +90,5 @@ public class Board {
 	public String getName(){
 		return this.name;
 	}
+	
 }
