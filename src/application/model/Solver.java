@@ -27,12 +27,33 @@ public class Solver {
 		this.boardArr = board.getBoardArr();
 	}
 	
+	/** Get the board arr **/
+	public Cell[][] getBoardArr(){
+		return this.boardArr;
+	}
+	
+	/** Get the rows unchecked list **/
+	public ArrayList <Integer> getRowsUnchecked(){
+		return this.rowsUnchecked;
+	}
+	
+	/** Get the cols unchecked list **/
+	public ArrayList <Integer> getColsUnchecked(){
+		return this.colsUnchecked;
+	}
+	
+	/** Get the squares unchecked list **/
+	public ArrayList <Integer> getSquaresUnchecked(){
+		return this.squaresUnchecked;
+	}
+	
 	/** Reset Checked rows, cols, and squares **/
 	public void resetChecked( ) {
 		this.rowsUnchecked.addAll(Arrays.asList(0,1,2,3,4,5,6,7,8));
 		this.colsUnchecked.addAll(Arrays.asList(0,1,2,3,4,5,6,7,8));
 		this.squaresUnchecked.addAll(Arrays.asList(1,2,3,4,5,6,7,8,9));
 	}
+		
 	
 	/** Update the board **/
 	public void updateBoard(int row, int col, int value) {
@@ -199,99 +220,179 @@ public class Solver {
 		}
 		else if(type.equalsIgnoreCase("square")){
 			// Number to add to index when looping through
-			int colOffset = 1;
-			int rowOffset = 1;
+			int colOffset = 0;
+			int rowOffset = 0;
+			
 			
 			// Determine row offset
-			if(index >= 1 && index <= 3) { 	rowOffset = 0; 	}     // Row including 1, 2, 3
-			else if (index >= 4 && index <= 5) { rowOffset = 3; } // Row including 4, 5, 6
-			else if (index >= 6 && index <= 9) { rowOffset = 6; } // Row including 7, 8, 9
+			if(index >= 1 && index <= 3) { 	rowOffset = 0; 	}     // Row including sq# 1, 2, 3
+			else if (index >= 4 && index <= 6) { rowOffset = 3; } // Row including sq# 4, 5, 6
+			else if (index >= 7 && index <= 9) { rowOffset = 6; } // Row including sq# 7, 8, 9
 			
 			// Determine column offset 
-			if((3 % index ) == 0) { colOffset = 6; 	}      // Col including 3, 6, 9
-			else if ((3 % index) == 1) { colOffset = 3; }  // Col including 2, 5, 8
-			else if ((3 % index) == 2) { colOffset = 0; }  // Col including 1, 4, 7
+			if((index % 3) == 0) { colOffset = 6; }      // Col including 3, 6, 9
+			else if ((index % 3) == 1) { colOffset = 0; }  // Col including 1, 4, 7
+			else if ((index % 3) == 2) { colOffset = 3; }  // Col including 2, 5, 8
 			
-			
+						
 			for(int row = 0; row < 3; row++) {
 				for(int col = 0; col < 3; col++ ) {
 					if(this.boardArr[row + rowOffset][col + colOffset].getValue() != 0) {
 						// Remove matches found
 						posNum.remove(Integer.valueOf(this.boardArr[row + rowOffset][col + colOffset].getValue()));
 					}
-					
 				}
 			}		
-			
 		}
 		else {
-			System.out.println("Invalid type");
-		}
-			
+			System.out.println("Invalid type"); // Shouldn't really happen but just in case
+		}		
 		return posNum;
-		
 	}
 	
 	
-	public void checkRow(int rowNum, ArrayList<Integer> posNum) {
+	/** Solving given a row **/
+	public boolean checkRow(int rowNum, ArrayList<Integer> posNum) {
+		boolean solutionFound = false;
+		ArrayList <Integer> currCol = new ArrayList<Integer>();		// holds AL of column solutions
+		ArrayList <Integer> currSquare = new ArrayList<Integer>();  // holds AL of square solutions
 		
+		// Remove this row from unchecked list
 		this.rowsUnchecked.remove(Integer.valueOf(rowNum));
-		System.out.println(this.rowsUnchecked);
 		
+		// For each empty spot, check column and square
+		for(int col = 0; col < 9; col++) {
+			
+			if(boardArr[rowNum][col].isEmpty) {
+				
+				// Clone the possible Number list so it can be modified for each empty slot
+				ArrayList <Integer> posNumEdit = (ArrayList<Integer>) posNum.clone();
+				
+				// Current possible answers for this row
+				currCol = getPosNum(col, "col");
+
+				int square = Square.getCurrSquare(rowNum, col); // Get square
+				currSquare = getPosNum(square, "square"); // Possible answers for current square
+				
+				// Eliminate unlikely answers for the empty spot
+				for(Integer ans: posNum) {
+					if(!currCol.contains(ans)) 
+						posNumEdit.remove(ans);
+					
+					if(!currSquare.contains(ans)) 
+						posNumEdit.remove(ans);
+				}
+				
+				// Just one value is left in the possible answers; this the solution
+				// Update board
+				if(posNumEdit.size() == 1) {
+					updateBoard(rowNum, col, posNumEdit.get(0));
+					solutionFound = true;
+				}
+			}
+		}
+		return solutionFound;
 	}
 	
-	public void checkCol(int colNum, ArrayList<Integer> posNum) {
+	/** Solving given a column **/
+	public boolean checkCol(int colNum, ArrayList<Integer> posNum) {
+		boolean solutionFound = false;
+		ArrayList <Integer> currRow = new ArrayList<Integer>();    // holds AL of row solutions
+		ArrayList <Integer> currSquare = new ArrayList<Integer>(); // holds AL of square solutions
 		
+		// Remove this column from unchecked list
 		this.colsUnchecked.remove(Integer.valueOf(colNum));
-		System.out.println(this.colsUnchecked);
-		
+	
+		// For each empty spot, check row and square
+		for(int row = 0; row < 9; row++) {
+			
+			if(boardArr[row][colNum].isEmpty) {
+				
+				// Clone the possible Number list so it can be modified for each empty slot
+				ArrayList <Integer> posNumEdit = (ArrayList<Integer>) posNum.clone();
+				
+				// Current possible answers for this row
+				currRow = getPosNum(row, "row");
+				
+				int square = Square.getCurrSquare(row, colNum); // Get square
+				currSquare = getPosNum(square, "square"); // Possible answers for current square
+				
+				// Eliminate unlikely answers for the empty spot
+				for(Integer ans: posNum) {
+					if(!currRow.contains(ans)) 
+						posNumEdit.remove(ans);
+					
+					if(!currSquare.contains(ans)) 
+						posNumEdit.remove(ans);
+				}
+				
+				// Just one value is left in the possible answers; this the solution
+				// Update board
+				if(posNumEdit.size() == 1) {
+					updateBoard(row, colNum, posNumEdit.get(0));
+					solutionFound = true;
+				}
+			}
+		}	
+		return solutionFound;
 	}
 	
-	public void checkSquare(int sqNum, ArrayList<Integer> posNum) {
+	/** Solving given a square **/
+	public boolean checkSquare(int sqNum, ArrayList<Integer> posNum) {
+		boolean solutionFound = false;
+		ArrayList <Integer> currRow = new ArrayList<Integer>();		// holds AL of row solutions
+		ArrayList <Integer> currCol = new ArrayList<Integer>();		// holds AL of column solutions
 		
+		// Number to add to index when looping through
+		int colOffset = 0;
+		int rowOffset = 0;
+
+		// Determine row offset
+		if(sqNum >= 1 && sqNum <= 3) { 	rowOffset = 0; 	}     // Row including sq# 1, 2, 3
+		else if (sqNum >= 4 && sqNum <= 6) { rowOffset = 3; } // Row including sq# 4, 5, 6
+		else if (sqNum >= 7 && sqNum <= 9) { rowOffset = 6; } // Row including sq# 7, 8, 9
+
+		// Determine column offset 
+		if((sqNum % 3) == 0) { colOffset = 6; 	}      // Col including 3, 6, 9
+		else if ((sqNum % 3) == 1) { colOffset = 0; }  // Col including 1, 4, 7
+		else if ((sqNum % 3) == 2) { colOffset = 3; }  // Col including 2, 5, 8
+
+		// Remove this square from unchecked list
 		this.squaresUnchecked.remove(Integer.valueOf(sqNum));
-		System.out.println(this.squaresUnchecked);
 		
-	}
-	/*public List checkRowsForNrs(Cell[][] boardArr, int[] posNum){
-		
-		List checkNr = Arrays.asList(posNum);
-		for(int i = 0; i < 9; i++){
-			for (int j = 0; j < 9; i++){
+		// For each empty spot, check row and column
+		for(int row = 0; row < 3; row++) {
+			for(int col = 0; col < 3; col++) {
 				
-				if (checkNr.contains(boardArr[i][j].getValue()) == true)
-					checkNr.remove(boardArr[i][j].getValue());
-				
+				if(boardArr[row + rowOffset][col + colOffset].isEmpty) {
+					
+					// Clone the possible Number list so it can be modified for each empty slot
+					ArrayList <Integer> posNumEdit = (ArrayList<Integer>) posNum.clone();
+					
+					// Get the Row and Col of current empty spot
+					currRow = getPosNum(row + rowOffset, "row");
+					currCol = getPosNum(col + colOffset, "col");
+					
+					//System.out.println("row "+ (row + rowOffset) + " col " + (col + colOffset));
+					// Eliminate unlikely answers for the empty spot
+					for(Integer ans: posNum) {
+						if(!currRow.contains(ans)) 
+							posNumEdit.remove(ans);
+			
+						if(!currCol.contains(ans)) 
+							posNumEdit.remove(ans);
+					}
+					
+					// Just one value is left in the possible answers; this the solution
+					// Update board
+					if(posNumEdit.size() == 1) {
+						updateBoard((row + rowOffset), (col + colOffset), posNumEdit.get(0));
+						solutionFound = true;
+					}
+				}
 			}
-			
-		}
-		if(checkNr.size() != 1)
-			checkNr = checkColsForNrs(boardArr, checkNr);
-			
-			
-		return checkNr;
+		}	
+		return solutionFound;
 	}
-	
-	public List checkColsForNrs(Cell[][] boardArr, List checkNr){
-		
-		for(int i = 0; i < 9; i++){
-			for (int j = 0; j < 9; i++){
-				
-				if (checkNr.contains(boardArr[j][i].getValue()) == true)
-					checkNr.remove(boardArr[j][i].getValue());
-				
-			}
-			
-		}
-		if(checkNr.size() != 1)
-			checkNr = checkSQsForNrs(boardArr, checkNr);
-		
-		return checkNr;
-	}
-	
-	public List checkSQsForNrs(Cell[][] boardArr, List checkNr){
-	
-		return checkNr;
-	}*/
 	
 }

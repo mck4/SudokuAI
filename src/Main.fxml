@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="700.0" minWidth="600.0" style="-fx-background-color: #d8bfd8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+<AnchorPane minHeight="800.0" minWidth="600.0" style="-fx-background-color: #d8bfd8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="700.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="800.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -27,7 +27,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <GridPane gridLinesVisible="true" layoutY="76.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="75.0">
+      <GridPane gridLinesVisible="true" layoutY="76.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="225.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="75.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -861,7 +861,7 @@
          </children>
       </GridPane>
       <ComboBox id="windows7Box" fx:id="choice" layoutX="197.0" layoutY="21.0" onAction="#handleCBx" prefHeight="37.0" prefWidth="206.0" promptText="Select Puzzle..." style="-fx-accent: #00ced1; -fx-focus-color: #00ced1;" stylesheets="@../extra.css" />
-      <Label layoutX="276.0" layoutY="587.0" style="-fx-background-color: #ffffff; -fx-border-color: #00ced1; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-insets: 1;" text="Label" textFill="#e81313" AnchorPane.bottomAnchor="79.0">
+      <Label fx:id="text" alignment="TOP_CENTER" layoutX="276.0" layoutY="587.0" prefHeight="103.0" prefWidth="560.0" style="-fx-background-color: #ffffff; -fx-border-color: #00ced1; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-insets: 1;" text="Label" textAlignment="CENTER" textFill="#e81313" wrapText="true" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -869,7 +869,7 @@
             <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
          </padding>
       </Label>
-      <Button id="windows7" layoutX="255.0" layoutY="631.0" mnemonicParsing="false" style="-fx-accent: #00ced1; -fx-focus-color: #00ced1;" stylesheets="@../extra.css" text="Next Step" AnchorPane.bottomAnchor="41.0">
+      <Button id="windows7" layoutX="255.0" layoutY="631.0" mnemonicParsing="false" onAction="#handle" style="-fx-accent: #00ced1; -fx-focus-color: #00ced1;" stylesheets="@../extra.css" text="Next Step" AnchorPane.bottomAnchor="41.0">
          <font>
             <Font size="14.0" />
          </font>
