@@ -6,11 +6,13 @@ public class Cell {
 	// Variables
 	int value;
 	boolean isEmpty;
+	int[] index = new int[2];
 	
 	// Constructor
-	public Cell(int value, boolean isEmpty) {
+	public Cell(int value, boolean isEmpty, int row, int col) {
 		this.value = value;
 		this.isEmpty = isEmpty;
+		setIndex(row, col);
 	}
 
 	// toString 
@@ -30,6 +32,10 @@ public class Cell {
 	public int getValue() {
 		return this.value;
 	}
+	
+	public int[] getIndex() {
+		return this.index;
+	}
 
 	// Sets the value of the cell
 	public void setValue(int value) {
@@ -39,6 +45,11 @@ public class Cell {
 	// Set the value of isEmpty
 	public void setEmpty(boolean isEmpty) {
 		this.isEmpty = isEmpty;
+	}
+	
+	public void setIndex(int row, int col) {
+		this.index[0] = row;
+		this.index[1] = col;
 	}
 
 }

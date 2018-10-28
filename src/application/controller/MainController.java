@@ -180,6 +180,8 @@ public class MainController implements EventHandler<ActionEvent> {
 		for(int row=0; row<9; row++) {
 			for(int col=0; col<9; col++) {
 				labels[row][col].setText(String.valueOf(board.getBoardArr()[row][col]));
+				if (count != 0) 
+					checkChangedCells(row, col);
 				//labels[row][col].setTextFill(Color.BLACK);
 				//if(memory != null && memory[row][col].isEmpty()) {
 				//	labels[row][col].setTextFill(Color.RED);
@@ -194,8 +196,10 @@ public class MainController implements EventHandler<ActionEvent> {
 	public void handleCBx(ActionEvent event) {
 		// Get the choice
 		String gridName = choice.getSelectionModel().selectedItemProperty().getValue();
+		System.out.println(count);
 		// Get the board
 		board = Board.loadBoard(filename, gridName);
+		//int i = 0;
 		// Load the numbers onto gui
 		loadNums(board);
 
@@ -234,4 +238,19 @@ public class MainController implements EventHandler<ActionEvent> {
 		}
 	}
 
+	public boolean checkChangedCells(int row, int col) {
+		
+		if(solver.getChangedCells() != null) {
+			for(Cell cell: solver.getChangedCells()) {
+				if (cell.getIndex()[0] == row && cell.getIndex()[1] == col) {
+					labels[row][col].setTextFill(Color.BLUE);
+					solver.getChangedCells().remove(cell);
+					return true;
+				}
+			}
+		}
+		labels[row][col].setTextFill(Color.BLACK);
+		return false;
+	}
+	
 }

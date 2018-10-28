@@ -52,7 +52,7 @@ public class Board {
 						newCellbool = true;
 
 					// Create new cell
-					Cell newCell = new Cell(newCellint, newCellbool);
+					Cell newCell = new Cell(newCellint, newCellbool, i, j);
 
 					// Place cell into 2d array
 					newBoardArr[i][j] = newCell;

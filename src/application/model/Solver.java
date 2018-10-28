@@ -14,6 +14,7 @@ public class Solver {
 	ArrayList <Integer> rowsUnchecked = new ArrayList<Integer>();
 	ArrayList <Integer> colsUnchecked = new ArrayList<Integer>();
 	ArrayList <Integer> squaresUnchecked = new ArrayList<Integer>();
+	ArrayList <Cell> changedCells = new ArrayList<Cell>();
 	
 	/** Constructor **/
 	public Solver(Board board) {
@@ -288,6 +289,7 @@ public class Solver {
 				if(posNumEdit.size() == 1) {
 					updateBoard(rowNum, col, posNumEdit.get(0));
 					solutionFound = true;
+					changedCells.add(boardArr[rowNum][col]);
 				}
 			}
 		}
@@ -331,6 +333,7 @@ public class Solver {
 				if(posNumEdit.size() == 1) {
 					updateBoard(row, colNum, posNumEdit.get(0));
 					solutionFound = true;
+					changedCells.add(boardArr[row][colNum]);
 				}
 			}
 		}	
@@ -388,11 +391,17 @@ public class Solver {
 					if(posNumEdit.size() == 1) {
 						updateBoard((row + rowOffset), (col + colOffset), posNumEdit.get(0));
 						solutionFound = true;
+						changedCells.add(boardArr[row+rowOffset][col+colOffset]);
 					}
 				}
 			}
 		}	
 		return solutionFound;
 	}
+	
+	public ArrayList<Cell> getChangedCells() {
+		return this.changedCells;
+	}
+	
 	
 }
