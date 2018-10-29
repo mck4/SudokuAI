@@ -387,8 +387,18 @@ public class Solver {
 		int [] rows = new int[9];  Arrays.fill(rows, 1);
 		int [] cols = new int[9]; Arrays.fill(cols, 1);
 		int [] squares = new int[9]; Arrays.fill(squares, 1);
-		
-		int [][] boardElim = new int[9][9]; Arrays.fill(boardElim, 1);
+
+		int [][] boardElim = new int[9][9];
+
+		// Fill boardElim with 1's where there are no values
+		for(int i=0;i<9;i++) {
+			for(int j=0;j<9;j++){
+				if(!boardArr[i][j].isEmpty) 
+					boardElim[i][j] = 0;
+				else
+					boardElim[i][j] = 1;
+			}
+		}
 		
 		// Find instances of given value and eliminate rows, cols, and squares
 		for(int row=0; row<9; row++){
@@ -438,7 +448,12 @@ public class Solver {
 					int colOffset = Square.getColOffset(square);
 					int rowOffset = Square.getRowOffset(square);
 					
-					boardElim[row + rowOffset][col + colOffset] = 0;
+					// Mark the whole square as zero
+					for(int SQrow = 0; SQrow < 3; SQrow++) {
+						for(int SQcol = 0; SQcol < 3; SQcol++ ) {
+							boardElim[SQrow + rowOffset][SQcol + colOffset] = 0;
+						}
+					}
 				}
 			}
 		}
