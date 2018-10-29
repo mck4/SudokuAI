@@ -26,6 +26,31 @@ public class Square {
 
 		return 0; // Shouldn't happen but just in case
 	}
+	
+	/** For a given square num give column offset **/
+	public static int getColOffset(int square){
+		int colOffset = 0;
+	
+		// Determine column offset 
+		if((square % 3) == 0) { colOffset = 6; 	}      // Col including 3, 6, 9
+		else if ((square % 3) == 1) { colOffset = 0; }  // Col including 1, 4, 7
+		else if ((square % 3) == 2) { colOffset = 3; }  // Col including 2, 5, 8
+		
+		return colOffset;
+	}
+	
+	/** For a given square num give row offset **/
+	public static int getRowOffset(int square){
+		int rowOffset = 0;
+	
+		// Determine column offset 
+		if(square >= 1 && square <= 3) { rowOffset = 0; }     // Row including sq# 1, 2, 3
+		else if (square >= 4 && square <= 6) { rowOffset = 3; } // Row including sq# 4, 5, 6
+		else if (square >= 7 && square <= 9) { rowOffset = 6; } // Row including sq# 7, 8, 9
+
+		
+		return rowOffset;
+	}
 
 	/** Check square 1 for empty spots (zeros) **/
 	public static int checkSQ1ForZeroes(Cell[][] boardArr){

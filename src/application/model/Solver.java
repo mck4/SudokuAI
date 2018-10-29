@@ -3,7 +3,6 @@ package application.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Solver {
 	
@@ -46,6 +45,11 @@ public class Solver {
 	/** Get the squares unchecked list **/
 	public ArrayList <Integer> getSquaresUnchecked(){
 		return this.squaresUnchecked;
+	}
+	
+	/** method to get the changed cells **/
+	public ArrayList <Cell> getChangedCells() {
+		return this.changedCells;
 	}
 	
 	/** Reset Checked rows, cols, and squares **/
@@ -221,20 +225,8 @@ public class Solver {
 		}
 		else if(type.equalsIgnoreCase("square")){
 			// Number to add to index when looping through
-			int colOffset = 0;
-			int rowOffset = 0;
-			
-			
-			// Determine row offset
-			if(index >= 1 && index <= 3) { 	rowOffset = 0; 	}     // Row including sq# 1, 2, 3
-			else if (index >= 4 && index <= 6) { rowOffset = 3; } // Row including sq# 4, 5, 6
-			else if (index >= 7 && index <= 9) { rowOffset = 6; } // Row including sq# 7, 8, 9
-			
-			// Determine column offset 
-			if((index % 3) == 0) { colOffset = 6; }      // Col including 3, 6, 9
-			else if ((index % 3) == 1) { colOffset = 0; }  // Col including 1, 4, 7
-			else if ((index % 3) == 2) { colOffset = 3; }  // Col including 2, 5, 8
-			
+			int colOffset = Square.getColOffset(index);
+			int rowOffset = Square.getRowOffset(index);
 						
 			for(int row = 0; row < 3; row++) {
 				for(int col = 0; col < 3; col++ ) {
@@ -347,19 +339,9 @@ public class Solver {
 		ArrayList <Integer> currCol = new ArrayList<Integer>();		// holds AL of column solutions
 		
 		// Number to add to index when looping through
-		int colOffset = 0;
-		int rowOffset = 0;
-
-		// Determine row offset
-		if(sqNum >= 1 && sqNum <= 3) { 	rowOffset = 0; 	}     // Row including sq# 1, 2, 3
-		else if (sqNum >= 4 && sqNum <= 6) { rowOffset = 3; } // Row including sq# 4, 5, 6
-		else if (sqNum >= 7 && sqNum <= 9) { rowOffset = 6; } // Row including sq# 7, 8, 9
-
-		// Determine column offset 
-		if((sqNum % 3) == 0) { colOffset = 6; 	}      // Col including 3, 6, 9
-		else if ((sqNum % 3) == 1) { colOffset = 0; }  // Col including 1, 4, 7
-		else if ((sqNum % 3) == 2) { colOffset = 3; }  // Col including 2, 5, 8
-
+		int colOffset = Square.getColOffset(sqNum);
+		int rowOffset = Square.getRowOffset(sqNum);
+		
 		// Remove this square from unchecked list
 		this.squaresUnchecked.remove(Integer.valueOf(sqNum));
 		
@@ -399,8 +381,67 @@ public class Solver {
 		return solutionFound;
 	}
 	
-	public ArrayList<Cell> getChangedCells() {
-		return this.changedCells;
+	/** Method to use the process of elimination to fill cells **/
+	public void eliminate(int value) {
+		// As a default the given value is a possible answer for all rows, cols, sqs with 1 (true)
+		int [] rows = new int[9];  Arrays.fill(rows, 1);
+		int [] cols = new int[9]; Arrays.fill(cols, 1);
+		int [] squares = new int[9]; Arrays.fill(squares, 1);
+		
+		int [][] boardElim = new int[9][9]; Arrays.fill(boardElim, 1);
+		
+		// Find instances of given value and eliminate rows, cols, and squares
+		for(int row=0; row<9; row++){
+			for(int col=0; col<9; col++){
+				// If it's not empty
+				if(!boardArr[row][col].isEmpty){
+					if(boardArr[row][col].getValue() == value){
+						rows[row] = 0;
+						cols[col] = 0;
+						// Get square
+						int square = Square.getCurrSquare(row, col); 
+						squares[square-1] = 0;
+						
+					}
+					
+				}
+			}
+		}
+		
+		// Eliminate rows from 2d board
+		for(int row=0; row<9; row++){
+			if(rows[row] == 0){
+				// Mark the whole row as zero
+				for(int col=0; col<9; col++){
+					boardElim[row][col] = 0;
+				}
+			}
+		}
+		
+		// Eliminate cols from 2d board
+		for(int col=0; col<9; col++){
+			if(cols[col] == 0){
+				// Mark the whole column as zero
+				for(int row=0; row<9; row++){
+					boardElim[row][col] = 0;
+				}
+			}
+		}
+		
+		// Eliminate squares from 2d board
+		for(int row=0; row<9; row++){
+			for(int col=0; col<9; col++){
+				int square = Square.getCurrSquare(row, col);
+				if(squares[square-1] == 0){
+					
+					// Number to add to index when looping through
+					int colOffset = Square.getColOffset(square);
+					int rowOffset = Square.getRowOffset(square);
+					
+					boardElim[row + rowOffset][col + colOffset] = 0;
+				}
+			}
+		}
 	}
 	
 	
