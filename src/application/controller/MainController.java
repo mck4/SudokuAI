@@ -105,8 +105,8 @@ public class MainController implements EventHandler<ActionEvent> {
 			if(solutionFound != true || leastEmptySquare == -1)
 				text.setText("No more Solutions");
 			else
-				text.setText("Looking at the empty values in square " + leastEmptySquare + 
-						" and checking the corresponding row and column we find solutions");
+				text.setText("In square " + leastEmptySquare + 
+						" we check the corresponding row and column to find solutions");
 			
 			board.setArr(solver.getBoardArr());
 			loadNums(board);
@@ -117,8 +117,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			// Rows next
 
 			boolean solutionFound = false;
-			// Square first
-
+			
 			while(solutionFound != true || leastEmptyRow == -1) {
 				leastEmptyRow = solver.checkRowsForZeros();
 				if(leastEmptyRow == -1)
@@ -132,8 +131,8 @@ public class MainController implements EventHandler<ActionEvent> {
 			if(solutionFound != true || leastEmptySquare == -1)
 				text.setText("No more Solutions");
 			else
-				text.setText("Looking at the empty values in row "  + (leastEmptyRow + 1)  + 
-						" and checking the corresponding square and column we find solutions");
+				text.setText("In row "  + (leastEmptyRow + 1)  + 
+						" we check the corresponding square and column to find solutions.");
 			
 			board.setArr(solver.getBoardArr());
 			loadNums(board);
@@ -159,14 +158,14 @@ public class MainController implements EventHandler<ActionEvent> {
 				text.setText("No more Solutions");
 			}
 			else
-				text.setText("Looking at the empty values in col "  + (leastEmptyCol + 1)  +
-						"  and checking the corresponding square and row we find solutions");
+				text.setText("In column "  + (leastEmptyCol + 1)  +
+						" we check the corresponding square and row to find solutions");
 			
-			solver.resetChecked();
 			board.setArr(solver.getBoardArr());
 			loadNums(board);
 
-
+			// Reset values
+			solver.resetChecked();
 			count = 0;
 		}
 		
@@ -182,13 +181,8 @@ public class MainController implements EventHandler<ActionEvent> {
 				labels[row][col].setText(String.valueOf(board.getBoardArr()[row][col]));
 				if (count != 0) 
 					checkChangedCells(row, col);
-				//labels[row][col].setTextFill(Color.BLACK);
-				//if(memory != null && memory[row][col].isEmpty()) {
-				//	labels[row][col].setTextFill(Color.RED);
-				//}
 			}
 		}
-		//memory = (Cell [][]) board.getBoardArr().clone();
 
 	}
 
@@ -196,7 +190,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	public void handleCBx(ActionEvent event) {
 		// Get the choice
 		String gridName = choice.getSelectionModel().selectedItemProperty().getValue();
-		System.out.println(count);
+		//System.out.println(count);
 		// Get the board
 		board = Board.loadBoard(filename, gridName);
 		//int i = 0;
@@ -238,6 +232,7 @@ public class MainController implements EventHandler<ActionEvent> {
 		}
 	}
 
+	/** Update the board, show what changed **/
 	public boolean checkChangedCells(int row, int col) {
 		
 		if(solver.getChangedCells() != null) {
