@@ -53,6 +53,7 @@ public class Solver {
 		return this.changedCells;
 	}
 	
+	/** method to check if board is solved **/
 	public boolean checkIfSolved(){
 		boolean isSolved = true;
 		outerloop:

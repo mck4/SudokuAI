@@ -1,4 +1,8 @@
 /** Main.java **/
+
+/** Sudoku_AI by 
+ * Zoey Abrigo & Carolina Kimbrough
+ */
 package application;
 	
 import javafx.application.Application;
