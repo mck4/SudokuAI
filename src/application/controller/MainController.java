@@ -28,6 +28,7 @@ public class MainController implements EventHandler<ActionEvent> {
 	public static Solver solver;
 	public static Board board;
 	public static Cell [][] memory;
+	boolean printOnce = false;
 	int count = 0;
 
 	@FXML
@@ -76,18 +77,139 @@ public class MainController implements EventHandler<ActionEvent> {
 		int leastEmptyRow = 0;
 		int leastEmptyCol = 0;
 		int leastEmptySquare = 0;
-
+		int numElim = 0;
+		
 		ArrayList<Integer> posAnsCol;
 		ArrayList<Integer> posAnsRow;
 		ArrayList<Integer> posAnsSquare;
 
+		// if someone presses the button but no board has been loaded
 		if(board == null)
 			return;
 
+		// Check if it's solved
+		if(board.isSolved() || solver.checkIfSolved()){
+			board.setIsSolved(true);
+			text.setText(board.getName() + " is solved!");
+			if(printOnce == false){
+				System.out.println(board.getName() + " is solved!");
+				printOnce = true;
+			}
+			
+			return;
+		}
+		
+
 		count++;
+		
 		// when the button is pressed
 		//System.out.println(count);
+		if((leastEmptySquare = solver.checkSquaresForZeroes()) != -1){
+			boolean solutionFound = false;
+			
+			posAnsSquare = solver.getPosNum(leastEmptySquare, "square");
+			solutionFound = solver.checkSquare(leastEmptySquare, posAnsSquare);
+			
+			while(solutionFound != true) {
+				leastEmptySquare = solver.checkSquaresForZeroes();
+				if(leastEmptySquare == -1)
+					break;
+				posAnsSquare = solver.getPosNum(leastEmptySquare, "square");
+				solutionFound = solver.checkSquare(leastEmptySquare, posAnsSquare);
+				
+			}
+			
+			if(solutionFound == true || leastEmptySquare != -1){
+				text.setText("In square " + leastEmptySquare + " we check the corresponding row and column to find solutions");
+				printBoardText("In square " + leastEmptySquare + " we check the corresponding row and column to find solutions");
+			}
+			else
+				text.setText("Checking squares yielded no results, keep clicking");
+			
+			board.setArr(solver.getBoardArr());
+			loadNums(board);
+		}
+		else if((leastEmptyCol = solver.checkColsForZeros()) != -1){
+			boolean solutionFound = false;
+			
+			posAnsCol = solver.getPosNum(leastEmptyCol, "col");
+			solutionFound = solver.checkCol(leastEmptyCol, posAnsCol);
+			
+			while(solutionFound != true) {
+				leastEmptyCol = solver.checkColsForZeros();
+				if(leastEmptyCol == -1)
+					break;
+				posAnsCol = solver.getPosNum(leastEmptyCol, "col");
+				solutionFound = solver.checkCol(leastEmptyCol, posAnsCol);
+				
+			}
+			
+			if(solutionFound == true || leastEmptyCol != -1){
+				text.setText("In column "  + (leastEmptyCol + 1) + " we check the corresponding square and row to find solutions.");
+				printBoardText("In column "  + (leastEmptyCol + 1) + " we check the corresponding square and row to find solutions.");
+			}
+			else
+				text.setText("Checking columns yielded no results, keep clicking");
+			
+			board.setArr(solver.getBoardArr());
+			loadNums(board);
+		}
+		else if((leastEmptyRow = solver.checkRowsForZeros()) != -1){
 
+			boolean solutionFound = false;
+
+			posAnsRow = solver.getPosNum(leastEmptyRow, "row");
+			solutionFound = solver.checkRow(leastEmptyRow, posAnsRow);
+
+			while(solutionFound != true) {
+				leastEmptyRow = solver.checkRowsForZeros();
+				if(leastEmptyRow == -1)
+					break;
+				posAnsRow = solver.getPosNum(leastEmptyRow, "row");
+				solutionFound = solver.checkRow(leastEmptyRow, posAnsRow);
+
+			}
+
+			if(solutionFound == true || leastEmptyRow != -1){
+				text.setText("In row "  + (leastEmptyRow + 1) + " we check the corresponding square and column to find solutions.");
+				printBoardText("In row "  + (leastEmptyRow + 1) + " we check the corresponding square and column to find solutions.");
+			}
+			else
+				text.setText("Checking rows yielded no results, keep clicking");
+			
+			board.setArr(solver.getBoardArr());
+			loadNums(board);
+			
+			//solver.resetChecked();
+
+		}
+		else if((numElim = solver.findNumMost()) != -1){
+			
+			boolean solutionFound = false;
+			
+			solutionFound = solver.eliminate(numElim);
+
+			while(solutionFound != true) {
+				numElim = solver.findNumMost();
+				if(numElim == -1)
+					break;
+				solutionFound = solver.eliminate(numElim);
+			}
+
+			if(solutionFound == true || numElim  != -1){
+				text.setText("We eliminate possible columns, rows, and squares that "  + numElim + " appears in.");
+				printBoardText("We eliminate possible columns, rows, and squares that "  + numElim + " appears in.");
+			}
+			else
+				text.setText("Elminating rows, columns and squares yielded no results, keep clicking");
+			
+			board.setArr(solver.getBoardArr());
+			loadNums(board);
+
+			// Reset values
+			solver.resetChecked();
+		}
+		/*
 		if(count == 1) {
 			boolean solutionFound = false;
 			// Square first
@@ -103,7 +225,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 
 			if(solutionFound != true || leastEmptySquare == -1)
-				text.setText("No more Solutions");
+				text.setText(" ");
 			else
 				text.setText("In square " + leastEmptySquare + 
 						" we check the corresponding row and column to find solutions");
@@ -129,7 +251,7 @@ public class MainController implements EventHandler<ActionEvent> {
 			}
 
 			if(solutionFound != true || leastEmptySquare == -1)
-				text.setText("No more Solutions");
+				text.setText("Keep clicking next");
 			else
 				text.setText("In row "  + (leastEmptyRow + 1)  + 
 						" we check the corresponding square and column to find solutions.");
@@ -165,11 +287,58 @@ public class MainController implements EventHandler<ActionEvent> {
 			loadNums(board);
 
 			// Reset values
+			//solver.resetChecked();
+			//count = 0;
+		}
+		if(count == 4) {
+			// use the elimination method
+
+			boolean solutionFound = false;
+
+			while(solutionFound != true || numElim  == -1) {
+				numElim = solver.findNumMost();
+				if(numElim == -1)
+					break;
+				solutionFound = solver.eliminate(numElim);
+				if(solutionFound)
+					break;
+			}
+
+			if(solutionFound != true || numElim  == -1) {
+				text.setText("No more Solutions");
+			}
+			else
+				text.setText("We eliminate possible columns, rows, and squares that "  + numElim  +
+						" appears in.");
+			
+			board.setArr(solver.getBoardArr());
+			loadNums(board);
+
+			// Reset values
 			solver.resetChecked();
 			count = 0;
 		}
+		*/
 		
+		count = 0;
+	}
+	
+	public void printBoardText(String text){
 		
+		for(int row=0; row<9; row++){
+			for(int col=0; col<9; col++){
+				if((col +1) % 3 == 0)
+					System.out.print(board.getBoardArr()[row][col] + "|");
+				else
+					System.out.print(board.getBoardArr()[row][col] + ".");
+				if((col +1) % 9 == 0)
+					System.out.println("");
+			}
+			if((row +1) % 3 == 0)
+				System.out.println("__________________");
+		}
+		System.out.println(text + "\n");
+
 	}
 
 	/** Method to load sudoku numbers onto gui **/
@@ -193,17 +362,18 @@ public class MainController implements EventHandler<ActionEvent> {
 		//System.out.println(count);
 		// Get the board
 		board = Board.loadBoard(filename, gridName);
-		//int i = 0;
+		
 		// Load the numbers onto gui
 		loadNums(board);
 
 		// Solver
 		solver = new Solver(board);
 
-		// Count reset to 0
+		// Set initial count as 0
 		count = 0;
 
 		text.setText("Click 'Next Step' to begin.");
+		printBoardText("INITIAL BOARD");
 
 	}
 

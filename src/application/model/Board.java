@@ -10,6 +10,7 @@ public class Board {
 	// Variables
 	Cell [][] boardArr = new Cell[9][9]; // 2d board arr
 	String name; // Name of board ie "Grid #"
+	boolean isSolved = false; // Has it been solved?
 
 	// Constructor
 	public Board(Cell[][] arr, String name){
@@ -87,6 +88,15 @@ public class Board {
 	// Get name of board
 	public String getName(){
 		return this.name;
+	}
+	
+	// Has the board been solved?
+	public boolean isSolved(){
+		return this.isSolved;
+	}
+	
+	public void setIsSolved(boolean b){
+		this.isSolved = b;
 	}
 	
 }

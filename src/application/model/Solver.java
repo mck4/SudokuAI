@@ -13,6 +13,7 @@ public class Solver {
 	ArrayList <Integer> rowsUnchecked = new ArrayList<Integer>();
 	ArrayList <Integer> colsUnchecked = new ArrayList<Integer>();
 	ArrayList <Integer> squaresUnchecked = new ArrayList<Integer>();
+	ArrayList <Integer> numsUnchecked = new ArrayList<Integer>();
 	ArrayList <Cell> changedCells = new ArrayList<Cell>();
 	
 	/** Constructor **/
@@ -52,11 +53,28 @@ public class Solver {
 		return this.changedCells;
 	}
 	
+	public boolean checkIfSolved(){
+		boolean isSolved = true;
+		outerloop:
+		for(int row=0; row<9; row++){
+			for(int col=0; col<9; col++){
+				if(boardArr[row][col].isEmpty()){
+					isSolved = false;
+					break outerloop;
+				}
+					
+			}
+		}
+		return isSolved;
+	}
+	
 	/** Reset Checked rows, cols, and squares **/
 	public void resetChecked( ) {
 		this.rowsUnchecked.addAll(Arrays.asList(0,1,2,3,4,5,6,7,8));
 		this.colsUnchecked.addAll(Arrays.asList(0,1,2,3,4,5,6,7,8));
 		this.squaresUnchecked.addAll(Arrays.asList(1,2,3,4,5,6,7,8,9));
+		if(this.numsUnchecked.isEmpty())
+			this.numsUnchecked.addAll(Arrays.asList(1,2,3,4,5,6,7,8,9));
 	}
 		
 	
@@ -381,16 +399,45 @@ public class Solver {
 		return solutionFound;
 	}
 	
+	/** Returns the value that appears the most **/
+	public int findNumMost(){
+		int most = -1;
+		int mostCount = 0;
+		
+		for(int num=1; num<=9; num++){
+			int numCount = 0;
+			
+			for(int row=0; row<9; row++){
+				for(int col=0; col<9; col++){
+					if(boardArr[row][col].getValue() == num)
+						numCount++;
+				}
+			}
+
+
+			if((numCount > mostCount) && this.numsUnchecked.contains(Integer.valueOf(num))){
+				most = num;
+				mostCount = numCount;
+			}
+		}
+		if(most != -1)
+			this.numsUnchecked.remove(Integer.valueOf(most));
+		
+		return most;
+	}
+	
 	/** Method to use the process of elimination to fill cells **/
-	public void eliminate(int value) {
+	public boolean eliminate(int value) {
+		boolean solutionFound = false;
+		
 		// As a default the given value is a possible answer for all rows, cols, sqs with 1 (true)
 		int [] rows = new int[9];  Arrays.fill(rows, 1);
 		int [] cols = new int[9]; Arrays.fill(cols, 1);
 		int [] squares = new int[9]; Arrays.fill(squares, 1);
 
-		int [][] boardElim = new int[9][9];
+		int [][] boardElim = new int[9][9]; // 1(true)/0(false) 2d map of board
 
-		// Fill boardElim with 1's where there are no values
+		// Fill boardElim with 1's where there are no values, 0's when there are values there
 		for(int i=0;i<9;i++) {
 			for(int j=0;j<9;j++){
 				if(!boardArr[i][j].isEmpty) 
@@ -400,20 +447,18 @@ public class Solver {
 			}
 		}
 		
-		// Find instances of given value and eliminate rows, cols, and squares
+		// Eliminate rows, cols, and squares if value is found there
 		for(int row=0; row<9; row++){
 			for(int col=0; col<9; col++){
 				// If it's not empty
 				if(!boardArr[row][col].isEmpty){
 					if(boardArr[row][col].getValue() == value){
-						rows[row] = 0;
-						cols[col] = 0;
-						// Get square
+						// If value matches given value
+						rows[row] = 0; // eliminate row
+						cols[col] = 0; // eliminate col
 						int square = Square.getCurrSquare(row, col); 
-						squares[square-1] = 0;
-						
+						squares[square-1] = 0; // eliminate square
 					}
-					
 				}
 			}
 		}
@@ -457,7 +502,47 @@ public class Solver {
 				}
 			}
 		}
-	}
-	
+		
+		// Look through squares and find squares where just 1 possible position for the given value is possible
+		for(int sq=1;sq<=9;sq++){
+			if(squares[sq-1] != 0){
+				
+				int colOffset = Square.getColOffset(sq);
+				int rowOffset = Square.getRowOffset(sq);
+				int posPlacements = 9; // This number gets decremented with each 0 encountered
+				
+				// Go through square & decrement
+				for(int SQrow = 0; SQrow < 3; SQrow++) {
+					for(int SQcol = 0; SQcol < 3; SQcol++ ) {
+						if(boardElim[SQrow + rowOffset][SQcol + colOffset] == 0){
+							posPlacements--;
+						}
+					}
+				}
+				
+				//System.out.println("Square #" + sq + ", posPlacements: " + posPlacements);
+				// After all possible positions have been eliminated...
+				if(posPlacements == 1){
+					int rowIndex;
+					int colIndex;
+					// find the position again and update board
+					squareloop:
+					for(int SQrow = 0; SQrow < 3; SQrow++) {
+						for(int SQcol = 0; SQcol < 3; SQcol++ ) {
+							if(boardElim[SQrow + rowOffset][SQcol + colOffset] == 1){
+								// update board
+								updateBoard(SQrow + rowOffset, SQcol + colOffset, value);
+								changedCells.add(boardArr[SQrow+rowOffset][SQcol+colOffset]);
+								solutionFound = true;
+								break squareloop;
+							}
+						}
+					}
+				}
+
+			}
+		}
+		return solutionFound;
+	}	
 	
 }
