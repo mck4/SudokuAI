@@ -382,7 +382,7 @@ public class MainController implements EventHandler<ActionEvent> {
 		// Open puzzles.txt
 		try {
 			Scanner puzzlesFile = new Scanner(new FileReader(filename));  	   // Open
-			Pattern pattern = Pattern.compile("(Grid [0-9]+)$");			   // Pattern must match "Grid #"
+			Pattern pattern = Pattern.compile("(Grid [0-9]+.*)");			   // Pattern must match "Grid #"
 			Matcher match;													   // For found matches
 			// Look for matches
 			while(puzzlesFile.hasNext()) {
